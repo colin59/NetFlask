@@ -1,0 +1,51 @@
+body {
+	background-color:black;
+	color:white;
+	font-family : Arial, Helvetica, sans-serif;
+	margin : 20px;
+	}
+	
+div.logo {
+	text-decoration:none;
+	color:red;
+	font-size:65px;
+	font-weight:bold;
+	width : 100%;	
+	text-align : center;
+	margin : 20px;
+	}
+	
+div.logo a {
+	margin-left: auto;
+    margin-right: auto;	
+    text-decoration:none;
+	color:red;
+	text-align : center;
+	width : 100%;
+}
+
+div.search
+{
+text-decoration:none;
+	color:red;
+	font-size:25px;
+	font-weight:bold;
+	width : 100%;	
+	text-align : center;
+	margin : 20px;
+}
+
+th, td
+	{
+	width : 15%;
+	text-align : center;
+	padding : 10px;
+	}
+
+div.film
+	{background-color : #333333;
+	width : 45%;
+	margin:5px;
+	}
+
+

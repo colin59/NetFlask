@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="film">
+    <h1>{{ data.Title }} ({{ data.year }})</h1>
+    
+    <p>rated <b>{{ data.rating }}</b><br/></p>
+    
+    <p>Genres : {{ data.genres }}</p>
+    
+    <table>
+		<tr>
+			
+			<th>Cute</th><th>nudity</th><th>sad</th><th>scary</th><th>violent</th>
+			
+		</tr>
+		<tr>
+			
+			<td>
+				{% for i in range(data.cute|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+			</td>
+			<td>
+				{% for i in range(data.nudity|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+			</td>
+			<td>
+				{% for i in range(data.sad|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+			</td>
+			<td>
+				{% for i in range(data.scary|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+			</td>
+			<td>
+				{% for i in range(data.violent|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+			</td>
+			
+		</tr>
+    </table>
+    
+</div>
+    
+<div class="reco">
+	
+		<h2>If you liked {{ data.Title }}, you should also like:</h2>
+		{% for i in range(recofilm|length) %}
+	<div class="film">
+		<h3>{{ recofilm[i].Title }} ({{ recofilm[i].year }})</h3>
+    
+		<p>rated <b>{{ recofilm[i].rating }}</b><br/></p>
+		
+		<p>Genres : {{ recofilm[i].genres }}</p>
+		
+		<table>
+			<tr>
+				
+				<th>Cute</th><th>nudity</th><th>sad</th><th>scary</th><th>violent</th>
+				
+			</tr>
+			<tr>
+				
+				<td>
+					{% for i in range(recofilm[i].cute|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				<td>
+					{% for i in range(recofilm[i].nudity|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				<td>
+					{% for i in range(recofilm[i].sad|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				<td>
+					{% for i in range(recofilm[i].scary|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				<td>
+					{% for i in range(recofilm[i].violent|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				
+			</tr>
+		</table>
+			
+    </div>
+    {% endfor %} 
+ </div>
+<!-- 
+<div class="reco">
+		
+		<h2>Based on your navigation historic : <br></h2>
+		{% for i in range(reconav|length) %}
+	<div class="film">
+		<h3>{{ reconav[i].Title }} ({{ reconav[i].year }})</h3>
+    
+		<p>rated <b>{{ reconav[i].rating }}</b><br/></p>
+		
+		<p>Genres : {{ reconav[i].genres }}</p>
+		
+		<table>
+			<tr>
+				
+				<th>Cute</th><th>nudity</th><th>sad</th><th>scary</th><th>violent</th>
+				
+			</tr>
+			<tr>
+				
+				<td>
+					{% for i in range(reconav[i].cute|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				<td>
+					{% for i in range(reconav[i].nudity|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				<td>
+					{% for i in range(reconav[i].sad|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				<td>
+					{% for i in range(reconav[i].scary|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				<td>
+					{% for i in range(reconav[i].violent|int) %}<img src={{ url_for('static', filename= 'img/star.png') }} width="15px"/>{% endfor %} 
+				</td>
+				
+			</tr>
+		</table>
+	</div>
+		{% endfor %} 
+		-
+    
+ </div>
+   --> 
+{% endblock %}

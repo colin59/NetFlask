@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Search results</h1>
+    
+    {% if search.title|length > 0 %}
+    <p>votre recherche peut concerner les films suivants : </p>
+    <ul>
+		{% for i in range(search.title|length) %}
+		<li><a href="/film?id={{ search.movieId[i]}}" style="color:white;">{{ search.title[i]}}</a>, {{ search.year[i]}}, {{ search.rating[i]}}</li>
+		{% endfor %}
+    </ul>
+    {% else %}
+    <p>Fichtre, pas de résultat :-(<br>Il va falloir essayer à nouveau...</p>
+    {% endif %}
+{% endblock %}

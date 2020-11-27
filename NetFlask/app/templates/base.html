@@ -1,0 +1,27 @@
+<html>
+    <head>
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}"/>
+      {% if title %}
+      <title>{{ title }}</title>
+      {% else %}
+      <title>Welcome to NetFlask</title>
+      {% endif %}
+    </head>
+    <body>
+        <div class="header">
+			<div class="logo">
+				<a href="/index">NETFLASK</a>   
+			</div>  
+			<div class="search">
+				<form action="searchResult" method="GET" novalidate>
+					{{ form.hidden_tag() }}
+					{{ form.FilmName.label }}
+					{{ form.FilmName(size=32) }}
+					{{ form.Submit() }}
+				</form>
+			</div>
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
